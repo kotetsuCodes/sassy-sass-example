@@ -1,0 +1,50 @@
+.container
+    max-width: 1400px
+    margin: 0 auto
+
+.row
+    display: block
+    margin: 0.25rem 0
+    background-color: $default-color
+    &:after 
+        visibility: hidden
+        display: block
+        font-size: 0
+        content: " "
+        clear: both
+        height: 0
+
+$min-column-count: 1
+$max-column-count: 12
+$gutter-size: 10px
+
+=col($colSize)
+    width: calc(#{$colSize} / #{$max-column-count} * 100% - #{$gutter-size})
+    margin: 0 $gutter-size / 2
+    padding: 5px 0
+    background-color: darken($default-color, 10%)
+    color: $default-font-color
+    float: left
+
+@for $i from $min-column-count through $max-column-count
+    .col-#{$i}-desktop 
+        +col($i)
+
+@media (max-width: 600px)
+    @for $i from $min-column-count through $max-column-count
+        .col-#{$i}-mobile
+            +col($i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

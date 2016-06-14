@@ -1,0 +1,44 @@
+input,textarea,select 
+    width: 100%
+    padding: 0.5rem
+    height: 34px
+    border-radius: 0.3125rem
+    border: 1px solid #ccc
+
+input,select
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+
+
+button
+    color: white
+    padding: 1rem 2rem
+    border-radius: 0.3125rem
+    border: none
+    cursor: pointer
+    margin: 0 0.15rem
+    text-transform: uppercase
+
+.btn-default
+    @extend button
+    background-color: $default-button-bgcolor
+    color: $default-button-color
+    &:hover 
+        background-color: darken($default-button-bgcolor, 2.5%)
+
+.btn-primary
+    @extend button
+    background-color: $primary-button-bgcolor
+    color: $primary-button-color
+    &:hover 
+        background-color: lighten($primary-button-bgcolor, 5%)
+
+
+.btn-secondary
+    @extend button
+    background-color: $secondary-button-bgcolor
+    color: $secondary-button-color
+    &:hover 
+        background-color: lighten($secondary-button-bgcolor, 10%)
