@@ -1,25 +1,42 @@
 input,textarea,select 
     width: 100%
-    padding: 0.5rem
-    height: 34px
-    border-radius: 0.3125rem
-    border: 1px solid #ccc
+    padding: 18px 18px 15px
+    background-color: $default-color
+    border: solid $body-bgcolor 1px
+    color: white
+
+input[type=text],input[type=password]
+    width: 100%
+    padding: 18px 18px 15px
+    background-color: $default-color
+    border: solid $body-bgcolor 1px
+    &:focus
+        border-color: $primary-color
+        background-color: $default-color
+        outline: none
 
 input,select
     box-sizing: border-box
     -moz-box-sizing: border-box
     -webkit-box-sizing: border-box
 
-
+select
+    outline: none
+    border-radius: 0px
+    border: none
 
 button
+    width: 100%
     color: white
     padding: 1rem 2rem
-    border-radius: 0.3125rem
+    //border-radius: 0.3125rem
     border: none
     cursor: pointer
     margin: 0 0.15rem
     text-transform: uppercase
+    &:focus
+        outline: none
+        background-color: lighten($primary-button-bgcolor, 5%)
 
 .btn-default
     @extend button
@@ -31,9 +48,9 @@ button
 .btn-primary
     @extend button
     background-color: $primary-button-bgcolor
-    color: $primary-button-color
     &:hover 
         background-color: lighten($primary-button-bgcolor, 5%)
+    
 
 
 .btn-secondary

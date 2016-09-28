@@ -1,17 +1,31 @@
-
-
-
 $min-item-size: 1
 $max-item-size: 12
 $collection-gutter-size: 2px
 
+.collection-item-first
+    padding-left: 18px
+
+.collection
+    display: block
+    &:after 
+        visibility: hidden
+        display: block
+        font-size: 0
+        content: " "
+        clear: both
+        height: 0
+
 =collectionItem($colSize)
-    width: calc(#{$colSize} / #{$max-item-size} * 100% - #{$collection-gutter-size})
-    margin: 0 $collection-gutter-size / 2
-    padding: 1.0rem 0
-    background-color: darken($default-color, 10%)
+    display: flex
+    width: calc(#{$colSize} / #{$max-item-size} * 100%)
+    //margin: $collection-gutter-size / 2 $collection-gutter-size / 2
+    margin: 2px 0
+    padding: 4px 0
     color: $default-font-color
+    background-color: $default-color
     float: left
+    height: 59px
+
 
 @for $i from $min-item-size through $max-item-size
     .collection-item-#{$i} 

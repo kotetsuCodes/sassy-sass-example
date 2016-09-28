@@ -1,0 +1,45 @@
+nav
+    display: block
+
+
+.navbar
+    display: block
+    &:after 
+        visibility: hidden
+        display: block
+        font-size: 0
+        content: " "
+        clear: both
+        height: 0
+
+.navbar>.navactive
+    background-color: $body-bgcolor
+    border-top: solid $primary-color 4px
+
+
+$min-nav-count: 1
+$max-nav-count: 12
+$gutter-size: 10px
+
+=nav($colSize)
+    display: inline-block
+    width: calc(#{$colSize} / #{$max-nav-count} * 100%)
+    margin: 0
+    height: calc(#{$colSize} / #{$max-nav-count} * 100%)
+    background-color: $default-color
+    color: $default-font-color
+    float: left
+    text-align: center
+    border-top: solid $default-color 4px
+    padding: 10px 0
+
+@for $i from $min-nav-count through $max-nav-count
+    .nav-#{$i}-desktop 
+        +nav($i)
+
+@media (max-width: 600px)
+    @for $i from $min-nav-count through $max-nav-count
+        .nav-#{$i}-mobile
+            +nav($i)
+
+
